@@ -65,7 +65,7 @@ def main(kaiju_file, taxtree):
 
     pool = Pool(20)
     with open(kaiju_file) as f:
-        print("sequence\tassignment\tsuperkingdom\tphylum\tclass\torder\tfamily\tgenus\tspecies\tsubspecies")
+        print("sequence\tsuperkingdom\tphylum\tclass\torder\tfamily\tgenus\tspecies\tsubspecies")
         for lineage in pool.imap_unordered(run_tax, f):
             print("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}".format(
                     lineage[0],
